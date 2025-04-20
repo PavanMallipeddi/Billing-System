@@ -8,8 +8,8 @@ class Bill_App:
         self.root=root
         self.root.geometry("1350x700+0+0")
         self.root.configure(bg="#0A7CFF")
-        self.root.title("Resturent Billing System - CodeWithCurious.com")
-        title=Label(self.root,text="Resturent Billing System",bd=12,relief=RIDGE,font=("Arial Black",20),bg="#A569BD",fg="white").pack(fill=X)
+        self.root.title("Mart-Billing System ")
+        title=Label(self.root,text=" Billing System",bd=12,relief=RIDGE,font=("Arial Black",20),bg="#A569BD",fg="white").pack(fill=X)
         #===================================variables=======================================================================================
         self.nutella=IntVar()
         self.noodles=IntVar()
@@ -19,7 +19,7 @@ class Bill_App:
         self.silk=IntVar()
         self.namkeen=IntVar()
         self.atta=IntVar()
-        self.pasta=IntVar()
+        self.pasta=IntVar() 
         self.rice=IntVar()
         self.oil=IntVar()
         self.sugar=IntVar()
@@ -28,7 +28,7 @@ class Bill_App:
         self.soap=IntVar()
         self.shampoo=IntVar()
         self.lotion=IntVar()
-        self.cream=IntVar()
+        self.sunscream=IntVar()
         self.foam=IntVar()
         self.mask=IntVar()
         self.sanitizer=IntVar()
@@ -57,8 +57,8 @@ class Bill_App:
         bill_name=Label(details,text="Bill.No.",font=("Arial Black",14),bg="#A569BD",fg="white").grid(row=0,column=4,padx=10)
 
         bill_entry=Entry(details,borderwidth=4,width=30,textvariable=self.bill_no).grid(row=0,column=5,padx=8)
-        #=======================================Resturant Menu=================================================================
-        snacks=LabelFrame(self.root,text="Starter",font=("Arial Black",12),bg="#E5B4F3",fg="#6C3483",relief=GROOVE,bd=10)
+        #=======================================Snacks=================================================================
+        snacks=LabelFrame(self.root,text="Snacks",font=("Arial Black",12),bg="#E5B4F3",fg="#6C3483",relief=GROOVE,bd=10)
         snacks.place(x=5,y=180,height=380,width=325)
 
         item1=Label(snacks,text="Nutella",font=("Arial Black",11),bg="#E5B4F3",fg="#6C3483").grid(row=0,column=0,pady=11)
@@ -81,8 +81,8 @@ class Bill_App:
 
         item7=Label(snacks,text="Namkeen",font=("Arial Black",11),bg="#E5B4F3",fg="#6C3483").grid(row=6,column=0,pady=11)
         item7_entry=Entry(snacks,borderwidth=2,width=15,textvariable=self.namkeen).grid(row=6,column=1,padx=10)
-        #=================================== Main Course =====================================================================================
-        grocery=LabelFrame(self.root,text="Main Course",font=("Arial Black",12),relief=GROOVE,bd=10,bg="#E5B4F3",fg="#6C3483")
+        #=================================== Grocery =====================================================================================
+        grocery=LabelFrame(self.root,text="Grocery",font=("Arial Black",12),relief=GROOVE,bd=10,bg="#E5B4F3",fg="#6C3483")
         grocery.place(x=340,y=180,height=380,width=325)
 
         item8=Label(grocery,text="Atta",font=("Arial Black",11),bg="#E5B4F3",fg="#6C3483").grid(row=0,column=0,pady=11)
@@ -91,7 +91,7 @@ class Bill_App:
         item9=Label(grocery,text="Pasta",font=("Arial Black",11),bg="#E5B4F3",fg="#6C3483").grid(row=1,column=0,pady=11)
         item9_entry=Entry(grocery,borderwidth=2,width=15,textvariable=self.pasta).grid(row=1,column=1,padx=10)
 
-        item10=Label(grocery,text="Basmathi Rice",font=("Arial Black",11),bg="#E5B4F3",fg="#6C3483").grid(row=2,column=0,pady=11)
+        item10=Label(grocery,text=" Rice",font=("Arial Black",11),bg="#E5B4F3",fg="#6C3483").grid(row=2,column=0,pady=11)
         item10_entry=Entry(grocery,borderwidth=2,width=15,textvariable=self.rice).grid(row=2,column=1,padx=10)
 
         item11=Label(grocery,text="Oil",font=("Arial Black",11),bg="#E5B4F3",fg="#6C3483").grid(row=3,column=0,pady=11)
@@ -103,10 +103,10 @@ class Bill_App:
         item13=Label(grocery,text="Daal",font=("Arial Black",11),bg="#E5B4F3",fg="#6C3483").grid(row=5,column=0,pady=11)
         item13_entry=Entry(grocery,borderwidth=2,width=15,textvariable=self.dal).grid(row=5,column=1,padx=10)
 
-        item14=Label(grocery,text="Tea Power",font=("Arial Black",11),bg="#E5B4F3",fg="#6C3483").grid(row=6,column=0,pady=11)
+        item14=Label(grocery,text="Tea Powder",font=("Arial Black",11),bg="#E5B4F3",fg="#6C3483").grid(row=6,column=0,pady=11)
         item14_entry=Entry(grocery,borderwidth=2,width=15,textvariable=self.tea).grid(row=6,column=1,padx=10)
-        #========================================Snacks===============================================================================
-        hygine=LabelFrame(self.root,text="Snacks",font=("Arial Black",12),relief=GROOVE,bd=10,bg="#E5B4F3",fg="#6C3483")
+        #========================================Beauty===============================================================================
+        hygine=LabelFrame(self.root,text="Beauty",font=("Arial Black",12),relief=GROOVE,bd=10,bg="#E5B4F3",fg="#6C3483")
         hygine.place(x=677,y=180,height=380,width=325)
 
         item15=Label(hygine,text="Soap",font=("Arial Black",11),bg="#E5B4F3",fg="#6C3483").grid(row=0,column=0,pady=11)
@@ -118,8 +118,8 @@ class Bill_App:
         item17=Label(hygine,text="Lotion",font=("Arial Black",11),bg="#E5B4F3",fg="#6C3483").grid(row=2,column=0,pady=11)
         item17_entry=Entry(hygine,borderwidth=2,width=15,textvariable=self.lotion).grid(row=2,column=1,padx=10)
 
-        item18=Label(hygine,text="Sunscreen",font=("Arial Black",11),bg="#E5B4F3",fg="#6C3483").grid(row=3,column=0,pady=11)
-        item18_entry=Entry(hygine,borderwidth=2,width=15,textvariable=self.sunscreen).grid(row=3,column=1,padx=10)
+        item18=Label(hygine,text="Sunscream",font=("Arial Black",11),bg="#E5B4F3",fg="#6C3483").grid(row=3,column=0,pady=11)
+        item18_entry=Entry(hygine,borderwidth=2,width=15,textvariable=self.sunscream).grid(row=3,column=1,padx=10)
 
         item19=Label(hygine,text="Foam",font=("Arial Black",11),bg="#E5B4F3",fg="#6C3483").grid(row=4,column=0,pady=11)
         item19_entry=Entry(hygine,borderwidth=2,width=15,textvariable=self.foam).grid(row=4,column=1,padx=10)
@@ -215,7 +215,7 @@ def total(self):
 
     self.so=self.soap.get()*30
     self.sh=self.shampoo.get()*180
-    self.cr=self.cream.get()*130
+    self.cr=self.sunscream.get()*130
     self.lo=self.lotion.get()*500
     self.fo=self.foam.get()*85
     self.ma=self.mask.get()*100
@@ -285,8 +285,8 @@ def billarea(self):
         self.txtarea.insert(END,f"Shampoo\t\t {self.shampoo.get()}\t{self.sh}\n")
     if self.lotion.get()!=0:
         self.txtarea.insert(END,f"Lotion\t\t {self.lotion.get()}\t{self.lo}\n")
-    if self.cream.get()!=0:
-        self.txtarea.insert(END,f"Cream\t\t {self.cream.get()}\t{self.cr}\n")
+    if self.sunscream.get()!=0:
+        self.txtarea.insert(END,f"Cream\t\t {self.sunscream.get()}\t{self.cr}\n")
     if self.foam.get()!=0:
         self.txtarea.insert(END,f"Foam\t\t {self.foam.get()}\t{self.fo}\n")
     if self.mask.get()!=0:
@@ -322,7 +322,7 @@ def clear(self):
         self.soap.set(0)
         self.shampoo.set(0)
         self.lotion.set(0)
-        self.cream.set(0)
+        self.sunscream.set(0)
         self.foam.set(0)
         self.mask.set(0)
         self.sanitizer.set(0)
@@ -334,7 +334,7 @@ def clear(self):
         self.c.set(0)
         self.c_name.set(0)
         self.bill_no.set(0)
-        self.bill_no.set(0)
+        self.bill_no.set(0) 
         self.phone.set(0)
 def exit1(self):
     self.root.destroy()
