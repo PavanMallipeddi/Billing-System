@@ -1,28 +1,6 @@
 # Billing-System
 A Python-based Billing System designed to automate invoice generation, manage transactions, and handle customer purchases efficiently. The system allows users to add products, calculate totals, generate receipts, and store transaction records.
 
-Features:
-Add, update, and remove products
-
-Calculate total price with tax and discount options
-
-Generate and print invoices
-
-Store transaction history in a database
-
-User authentication for secure access
-
-Export reports to CSV/PDF
-
-
-
-Technologies Used:
-Programming Language: Python
-
-GUI Framework: Tkinter (Optional for UI)
-
-Database: SQLite/MySQL
-
 
 Usage:
 Start the application and add products to the billing system.
