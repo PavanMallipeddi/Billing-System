@@ -7,9 +7,9 @@ class Bill_App:
     def __init__(self,root):
         self.root=root
         self.root.geometry("1350x700+0+0")
-        self.root.configure(bg="#0A7CFF")
+        self.root.configure(bg="#F5F5F5")  # Light gray background
         self.root.title("Mart-Billing System ")
-        title=Label(self.root,text=" Billing System",bd=12,relief=RIDGE,font=("Arial Black",20),bg="#A569BD",fg="white").pack(fill=X)
+        title=Label(self.root,text=" 🛒  SuperMart Billing System",bd=12,relief=RIDGE,font=("Arial Black",20),bg="#ACD1AA",fg="#212121").pack(fill=X)
         #===================================variables=======================================================================================
         self.nutella=IntVar()
         self.noodles=IntVar()
@@ -38,102 +38,103 @@ class Bill_App:
         self.a=StringVar()
         self.b=StringVar()
         self.c=StringVar()
-        self.c_name=StringVar()
-        self.bill_no=StringVar()
-        x=random.randint(1000,9999)
-        self.bill_no.set(str(x))
-        self.phone=StringVar()
+        self.c_name = StringVar()
+        self.bill_no = StringVar()
+        self.bill_no.set(str(random.randint(1000, 9999)))
+        self.phone=IntVar()
         #==========================================customer details label frame=================================================
-        details=LabelFrame(self.root,text="Customer Details",font=("Arial Black",12),bg="#A569BD",fg="white",relief=GROOVE,bd=10)
-        details.place(x=0,y=80,relwidth=1)
-        cust_name=Label(details,text="Customer Name",font=("Arial Black",14),bg="#A569BD",fg="white").grid(row=0,column=0,padx=15)
+    
+        details=LabelFrame(self.root,text="Customer Details",font=("Arial Black",14),bg="#E8F5E9",fg="#333333",relief=GROOVE,bd=10)
+        details.place(x=10,y=80,relwidth=0.98, height=90)
+        cust_name=Label(details,text="Customer Name",font=("Arial Black",12),bg="#E8F5E9",fg="#333333").grid(row=0, column=0, padx=15, pady=10)
 
         cust_entry=Entry(details,borderwidth=4,width=30,textvariable=self.c_name).grid(row=0,column=1,padx=8)
+        #cust_entry=Entry(details, font=("Segoe UI", 12), textvariable=self.c_name, width=25, bd=4, relief=SOLID).grid(row=0, column=1, padx=8)
 
-        contact_name=Label(details,text="Contact No.",font=("Arial Black",14),bg="#A569BD",fg="white").grid(row=0,column=2,padx=10)
+        contact_name=Label(details,text="Contact No.",font=("Arial Black",13),bg="#E8F5E9",fg="#333333").grid(row=0,column=2,padx=10)
 
         contact_entry=Entry(details,borderwidth=4,width=30,textvariable=self.phone).grid(row=0,column=3,padx=8)
 
-        bill_name=Label(details,text="Bill.No.",font=("Arial Black",14),bg="#A569BD",fg="white").grid(row=0,column=4,padx=10)
+        bill_name=Label(details,text="Bill.No.",font=("Arial Black",13),bg="#E8F5E9",fg="#333333").grid(row=0,column=4,padx=10)
 
         bill_entry=Entry(details,borderwidth=4,width=30,textvariable=self.bill_no).grid(row=0,column=5,padx=8)
-        #=======================================Snacks=================================================================
-        snacks=LabelFrame(self.root,text="Snacks",font=("Arial Black",12),bg="#E5B4F3",fg="#6C3483",relief=GROOVE,bd=10)
+        #=======================================Resturant Menu=================================================================
+        snacks=LabelFrame(self.root,text="Snacks",font=("Arial Black",15),bg="#E8F5E9",fg="#333333",relief=GROOVE,bd=10)
         snacks.place(x=5,y=180,height=380,width=325)
 
-        item1=Label(snacks,text="Nutella",font=("Arial Black",11),bg="#E5B4F3",fg="#6C3483").grid(row=0,column=0,pady=11)
+        item1=Label(snacks,text="Nutella",font=("Arial Black",11),bg="#E8F5E9",fg="#333333").grid(row=0,column=0,pady=11)
         item1_entry=Entry(snacks,borderwidth=2,width=15,textvariable=self.nutella).grid(row=0,column=1,padx=10)
 
-        item2=Label(snacks,text="Noodles",font=("Arial Black",11),bg="#E5B4F3",fg="#6C3483").grid(row=1,column=0,pady=11)
+        item2=Label(snacks,text="Noodles",font=("Arial Black",11),bg="#E8F5E9",fg="#333333").grid(row=1,column=0,pady=11)
         item2_entry=Entry(snacks,borderwidth=2,width=15,textvariable=self.noodles).grid(row=1,column=1,padx=10)
 
-        item3=Label(snacks,text="Lays",font=("Arial Black",11),bg="#E5B4F3",fg="#6C3483").grid(row=2,column=0,pady=11)
+        item3=Label(snacks,text="Lays",font=("Arial Black",11),bg="#E8F5E9",fg="#333333").grid(row=2,column=0,pady=11)
         item3_entry=Entry(snacks,borderwidth=2,width=15,textvariable=self.lays).grid(row=2,column=1,padx=10)
 
-        item4=Label(snacks,text="Oreo",font=("Arial Black",11),bg="#E5B4F3",fg="#6C3483").grid(row=3,column=0,pady=11)
+        item4=Label(snacks,text="Oreo",font=("Arial Black",11),bg="#E8F5E9",fg="#333333").grid(row=3,column=0,pady=11)
         item4_entry=Entry(snacks,borderwidth=2,width=15,textvariable=self.oreo).grid(row=3,column=1,padx=10)
 
-        item5=Label(snacks,text="Muffin",font=("Arial Black",11),bg="#E5B4F3",fg="#6C3483").grid(row=4,column=0,pady=11)
+        item5=Label(snacks,text="Muffin",font=("Arial Black",11),bg="#E8F5E9",fg="#333333").grid(row=4,column=0,pady=11)
         item5_entry=Entry(snacks,borderwidth=2,width=15,textvariable=self.muffin).grid(row=4,column=1,padx=10)
 
-        item6=Label(snacks,text="Silk",font=("Arial Black",11),bg="#E5B4F3",fg="#6C3483").grid(row=5,column=0,pady=11)
+        item6=Label(snacks,text="Silk",font=("Arial Black",11),bg="#E8F5E9",fg="#333333").grid(row=5,column=0,pady=11)
         item6_entry=Entry(snacks,borderwidth=2,width=15,textvariable=self.silk).grid(row=5,column=1,padx=10)
 
-        item7=Label(snacks,text="Namkeen",font=("Arial Black",11),bg="#E5B4F3",fg="#6C3483").grid(row=6,column=0,pady=11)
+        item7=Label(snacks,text="Namkeen",font=("Arial Black",11),bg="#E8F5E9",fg="#333333").grid(row=6,column=0,pady=11)
         item7_entry=Entry(snacks,borderwidth=2,width=15,textvariable=self.namkeen).grid(row=6,column=1,padx=10)
         #=================================== Grocery =====================================================================================
-        grocery=LabelFrame(self.root,text="Grocery",font=("Arial Black",12),relief=GROOVE,bd=10,bg="#E5B4F3",fg="#6C3483")
+        grocery=LabelFrame(self.root,text="Grocery",font=("Arial Black",15),relief=GROOVE,bd=10,bg="#E8F5E9",fg="#333333")
         grocery.place(x=340,y=180,height=380,width=325)
 
-        item8=Label(grocery,text="Atta",font=("Arial Black",11),bg="#E5B4F3",fg="#6C3483").grid(row=0,column=0,pady=11)
+        item8=Label(grocery,text="Atta",font=("Arial Black",11),bg="#E8F5E9",fg="#333333").grid(row=0,column=0,pady=11)
         item8_entry=Entry(grocery,borderwidth=2,width=15,textvariable=self.atta).grid(row=0,column=1,padx=10)
 
-        item9=Label(grocery,text="Pasta",font=("Arial Black",11),bg="#E5B4F3",fg="#6C3483").grid(row=1,column=0,pady=11)
+        item9=Label(grocery,text="Pasta",font=("Arial Black",11),bg="#E8F5E9",fg="#333333").grid(row=1,column=0,pady=11)
         item9_entry=Entry(grocery,borderwidth=2,width=15,textvariable=self.pasta).grid(row=1,column=1,padx=10)
 
-        item10=Label(grocery,text=" Rice",font=("Arial Black",11),bg="#E5B4F3",fg="#6C3483").grid(row=2,column=0,pady=11)
+        item10=Label(grocery,text=" Rice",font=("Arial Black",11),bg="#E8F5E9",fg="#333333").grid(row=2,column=0,pady=11)
         item10_entry=Entry(grocery,borderwidth=2,width=15,textvariable=self.rice).grid(row=2,column=1,padx=10)
 
-        item11=Label(grocery,text="Oil",font=("Arial Black",11),bg="#E5B4F3",fg="#6C3483").grid(row=3,column=0,pady=11)
+        item11=Label(grocery,text="Oil",font=("Arial Black",11),bg="#E8F5E9",fg="#333333").grid(row=3,column=0,pady=11)
         item11_entry=Entry(grocery,borderwidth=2,width=15,textvariable=self.oil).grid(row=3,column=1,padx=10)
 
-        item12=Label(grocery,text="Sugar",font=("Arial Black",11),bg="#E5B4F3",fg="#6C3483").grid(row=4,column=0,pady=11)
+        item12=Label(grocery,text="Sugar",font=("Arial Black",11),bg="#E8F5E9",fg="#333333").grid(row=4,column=0,pady=11)
         item12_entry=Entry(grocery,borderwidth=2,width=15,textvariable=self.sugar).grid(row=4,column=1,padx=10)
 
-        item13=Label(grocery,text="Daal",font=("Arial Black",11),bg="#E5B4F3",fg="#6C3483").grid(row=5,column=0,pady=11)
+        item13=Label(grocery,text="Daal",font=("Arial Black",11),bg="#E8F5E9",fg="#333333").grid(row=5,column=0,pady=11)
         item13_entry=Entry(grocery,borderwidth=2,width=15,textvariable=self.dal).grid(row=5,column=1,padx=10)
 
-        item14=Label(grocery,text="Tea Powder",font=("Arial Black",11),bg="#E5B4F3",fg="#6C3483").grid(row=6,column=0,pady=11)
+        item14=Label(grocery,text="Tea Powder",font=("Arial Black",11),bg="#E8F5E9",fg="#333333").grid(row=6,column=0,pady=11)
         item14_entry=Entry(grocery,borderwidth=2,width=15,textvariable=self.tea).grid(row=6,column=1,padx=10)
         #========================================Beauty===============================================================================
-        hygine=LabelFrame(self.root,text="Beauty",font=("Arial Black",12),relief=GROOVE,bd=10,bg="#E5B4F3",fg="#6C3483")
+        hygine=LabelFrame(self.root,text="Beauty",font=("Arial Black",15),relief=GROOVE,bd=10,bg="#E8F5E9",fg="#333333")
         hygine.place(x=677,y=180,height=380,width=325)
 
-        item15=Label(hygine,text="Soap",font=("Arial Black",11),bg="#E5B4F3",fg="#6C3483").grid(row=0,column=0,pady=11)
+        item15=Label(hygine,text="Soap",font=("Arial Black",11),bg="#E8F5E9",fg="#333333").grid(row=0,column=0,pady=11)
         item15_entry=Entry(hygine,borderwidth=2,width=15,textvariable=self.soap).grid(row=0,column=1,padx=10)
 
-        item16=Label(hygine,text="Shampoo",font=("Arial Black",11),bg="#E5B4F3",fg="#6C3483").grid(row=1,column=0,pady=11)
+        item16=Label(hygine,text="Shampoo",font=("Arial Black",11),bg="#E8F5E9",fg="#333333").grid(row=1,column=0,pady=11)
         item16_entry=Entry(hygine,borderwidth=2,width=15,textvariable=self.shampoo).grid(row=1,column=1,padx=10)
 
-        item17=Label(hygine,text="Lotion",font=("Arial Black",11),bg="#E5B4F3",fg="#6C3483").grid(row=2,column=0,pady=11)
+        item17=Label(hygine,text="Lotion",font=("Arial Black",11),bg="#E8F5E9",fg="#333333").grid(row=2,column=0,pady=11)
         item17_entry=Entry(hygine,borderwidth=2,width=15,textvariable=self.lotion).grid(row=2,column=1,padx=10)
 
-        item18=Label(hygine,text="Sunscream",font=("Arial Black",11),bg="#E5B4F3",fg="#6C3483").grid(row=3,column=0,pady=11)
+        item18=Label(hygine,text="Sunscream",font=("Arial Black",11),bg="#E8F5E9",fg="#333333").grid(row=3,column=0,pady=11)
         item18_entry=Entry(hygine,borderwidth=2,width=15,textvariable=self.sunscream).grid(row=3,column=1,padx=10)
 
-        item19=Label(hygine,text="Foam",font=("Arial Black",11),bg="#E5B4F3",fg="#6C3483").grid(row=4,column=0,pady=11)
+        item19=Label(hygine,text="Foam",font=("Arial Black",11),bg="#E8F5E9",fg="#333333").grid(row=4,column=0,pady=11)
         item19_entry=Entry(hygine,borderwidth=2,width=15,textvariable=self.foam).grid(row=4,column=1,padx=10)
 
-        item20=Label(hygine,text="Mask",font=("Arial Black",11),bg="#E5B4F3",fg="#6C3483").grid(row=5,column=0,pady=11)
+        item20=Label(hygine,text="Mask",font=("Arial Black",11),bg="#E8F5E9",fg="#333333").grid(row=5,column=0,pady=11)
         item20_entry=Entry(hygine,borderwidth=2,width=15,textvariable=self.mask).grid(row=5,column=1,padx=10)
 
-        item21=Label(hygine,text="Sanitizer",font=("Arial Black",11),bg="#E5B4F3",fg="#6C3483").grid(row=6,column=0,pady=11)
+        item21=Label(hygine,text="Sanitizer",font=("Arial Black",11),bg="#E8F5E9",fg="#333333").grid(row=6,column=0,pady=11)
         item21_entry=Entry(hygine,borderwidth=2,width=15,textvariable=self.sanitizer).grid(row=6,column=1,padx=10)
         #=====================================================billarea==============================================================================
-        billarea=Frame(self.root,bd=10,relief=GROOVE,bg="#E5B4F3")
+        billarea=Frame(self.root,bd=10,relief=GROOVE,bg="#E8F5E9")
         billarea.place(x=1010,y=188,width=330,height=372)
 
-        bill_title=Label(billarea,text="Bill Area",font=("Arial Black",17),bd=7,relief=GROOVE,bg="#E5B4F3",fg="#6C3483").pack(fill=X)
+        bill_title=Label(billarea,text="Bill Area",font=("Arial Black",17),bd=7,relief=GROOVE,bg="#ACD1AA",fg="#333333").pack(fill=X)
 
         scrol_y=Scrollbar(billarea,orient=VERTICAL)
         self.txtarea=Text(billarea,yscrollcommand=scrol_y.set)
@@ -141,35 +142,35 @@ class Bill_App:
         scrol_y.config(command=self.txtarea.yview)
         self.txtarea.pack(fill=BOTH,expand=1)
         #=================================================billing menu=========================================================================================
-        billing_menu=LabelFrame(self.root,text="Billing Summery- ",font=("Arial Black",12),relief=GROOVE,bd=10,bg="#A569BD",fg="white")
-        billing_menu.place(x=0,y=560,relwidth=1,height=137)
+        billing_menu=LabelFrame(self.root,text="Billing Summery- ",font=("Arial Black",14),relief=GROOVE,bd=10,bg="#E8F5E9",fg="#333333")
+        billing_menu.place(x=10,y=580,relwidth=1,height=140)
 
-        total_snacks=Label(billing_menu,text="Total Snacks Price",font=("Arial Black",11),bg="#A569BD",fg="white").grid(row=0,column=0)
+        total_snacks=Label(billing_menu,text="Total Snacks Price",font=("Arial Black",11),bg="#E8F5E9",fg="#333333").grid(row=0,column=0)
         total_snacks_entry=Entry(billing_menu,width=30,borderwidth=2,textvariable=self.total_sna).grid(row=0,column=1,padx=10,pady=7)
 
-        total_grocery=Label(billing_menu,text="Total Grocery Price",font=("Arial Black",11),bg="#A569BD",fg="white").grid(row=1,column=0)
+        total_grocery=Label(billing_menu,text="Total Grocery Price",font=("Arial Black",11),bg="#E8F5E9",fg="#333333").grid(row=1,column=0)
         total_grocery_entry=Entry(billing_menu,width=30,borderwidth=2,textvariable=self.total_gro).grid(row=1,column=1,padx=10,pady=7)
 
 
-        total_hygine=Label(billing_menu,text="Total Beauty & Hygine Price",font=("Arial Black",11),bg="#A569BD",fg="white").grid(row=2,column=0)
+        total_hygine=Label(billing_menu,text="Total Beauty & Hygine Price",font=("Arial Black",11),bg="#E8F5E9",fg="#333333").grid(row=2,column=0)
         total_hygine_entry=Entry(billing_menu,width=30,borderwidth=2,textvariable=self.total_hyg).grid(row=2,column=1,padx=10,pady=7)
 
-        tax_snacks=Label(billing_menu,text="Snacks Tax",font=("Arial Black",11),bg="#A569BD",fg="white").grid(row=0,column=2)
+        tax_snacks=Label(billing_menu,text="Snacks Tax",font=("Arial Black",11),bg="#E8F5E9",fg="#333333").grid(row=0,column=2)
         tax_snacks_entry=Entry(billing_menu,width=30,borderwidth=2,textvariable=self.a).grid(row=0,column=3,padx=10,pady=7)
 
-        tax_grocery=Label(billing_menu,text="Grocery Tax",font=("Arial Black",11),bg="#A569BD",fg="white").grid(row=1,column=2)
+        tax_grocery=Label(billing_menu,text="Grocery Tax",font=("Arial Black",11),bg="#E8F5E9",fg="#333333").grid(row=1,column=2)
         tax_grocery_entry=Entry(billing_menu,width=30,borderwidth=2,textvariable=self.b).grid(row=1,column=3,padx=10,pady=7)
 
 
-        tax_hygine=Label(billing_menu,text="Beauty & Hygine Tax",font=("Arial Black",11),bg="#A569BD",fg="white").grid(row=2,column=2)
+        tax_hygine=Label(billing_menu,text="Beauty & Hygine Tax",font=("Arial Black",11),bg="#E8F5E9",fg="#333333").grid(row=2,column=2)
         tax_hygine_entry=Entry(billing_menu,width=30,borderwidth=2,textvariable=self.c).grid(row=2,column=3,padx=10,pady=7)
 
-        button_frame=Frame(billing_menu,bd=7,relief=GROOVE,bg="#6C3483")
+        button_frame=Frame(billing_menu,bd=7,relief=GROOVE,bg="#ACD1AA")
         button_frame.place(x=830,width=500,height=95)
 
-        button_total=Button(button_frame,text="Total Bill",font=("Arial Black",15),pady=10,bg="#E5B4F3",fg="#6C3483",command=lambda:total(self)).grid(row=0,column=0,padx=12)
-        button_clear=Button(button_frame,text="Clear Field",font=("Arial Black",15),pady=10,bg="#E5B4F3",fg="#6C3483",command=lambda:clear(self)).grid(row=0,column=1,padx=10,pady=6)
-        button_exit=Button(button_frame,text="Exit",font=("Arial Black",15),pady=10,bg="#E5B4F3",fg="#6C3483",width=8,command=lambda:exit1(self)).grid(row=0,column=2,padx=10,pady=6)
+        button_total=Button(button_frame,text="🧮 Total Bill",font=("Arial Black",13),pady=10,bg="#E8F5E9",fg="#333333",command=lambda:total(self)).grid(row=0,column=0,padx=12)
+        button_clear=Button(button_frame,text="🧹Clear Field",font=("Arial Black",13),pady=10,bg="#E8F5E9",fg="#333333",command=lambda:clear(self)).grid(row=0,column=1,padx=10,pady=6)
+        button_exit=Button(button_frame,text="🚪Exit",font=("Arial Black",13),pady=10,bg="#E8F5E9",fg="#333333",width=8,command=lambda:exit1(self)).grid(row=0,column=2,padx=10,pady=6)
         intro(self)
 
 
@@ -242,7 +243,7 @@ def total(self):
     billarea(self)
 def intro(self):
     self.txtarea.delete(1.0,END)
-    self.txtarea.insert(END,"\tWELCOME TO SUPER MARKET\n\tPhone-No.739275410")
+    self.txtarea.insert(END,"\tWELCOME TO SUPER MARKET\n\tPhone-No.")
     self.txtarea.insert(END,f"\n\nBill no. : {self.bill_no.get()}")
     self.txtarea.insert(END,f"\nCustomer Name : {self.c_name.get()}")
     self.txtarea.insert(END,f"\nPhone No. : {self.phone.get()}")
