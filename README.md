@@ -107,9 +107,3 @@ SuperMart-Billing-System/
 
 ---
 
-## 🏆 Author
-
-**Pavankumar Mallipeddi**
-📧 *mallipeddipavan123@gmail.com*
-💼 [LinkedIn Profile]([https://www.linkedin.com/](https://www.linkedin.com/in/pavankumar-mallipeddi-1b2465248/))
-
